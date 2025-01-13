@@ -1,4 +1,52 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# React Native Redux Store Template ⚡
+
+This project provides a simple and reusable template for managing state in React Native applications using Redux. It includes a predefined Redux store structure, actions, reducers, and configuration, making it easier to scale and maintain your React Native projects.
+
+## Features ✨
+
+**Redux Store:** A centralized state management system for your app, allowing predictable state changes.
+
+**Actions and Reducers:** A basic structure for dispatching actions and handling state changes in your application.
+
+**Easy Setup:** The template is pre-configured with Redux and ready to be customized for your specific project needs.
+
+
+## Installation 📲
+To get started with the template, follow these steps:
+
+### Clone the repository:
+
+```bash
+git clone https://github.com/Hyzle/RN-Redux.git
+cd RN-Redux
+```
+### Install dependencies:
+
+```bash
+npm install
+```
+Run the project:
+
+**For iOS:**
+```bash
+npx react-native run-ios
+```
+**For Android:**
+```bash
+npx react-native run-android
+```
+
+## Usage 🛠️
+**Store Configuration (store.ts):** In the **app/store.ts** file, the Redux store is configured using @reduxjs/toolkit's configureStore function. It integrates redux-persist to persist the store's state across app restarts, with AsyncStorage as the storage backend. The counterSlice reducer is wrapped with persistReducer to enable state persistence. The store is set up with middleware to handle specific actions and includes Redux DevTools support in non-production environments.
+
+**Custom Hooks (hooks.ts):** In the **app/hooks/hooks.ts** file, custom hooks are created to make it easier to interact with the Redux store. The useAppDispatch hook is used to dispatch actions, while the useAppSelector hook is used to select state from the store. These hooks ensure type safety when accessing and modifying the store.
+
+**Counter Slice (counterSlice.ts):** The **features/counterSlice.ts** file defines a slice of the Redux store for managing a simple counter. The createSlice function from @reduxjs/toolkit is used to define the state (CounterState), initial state, and the reducers (increment, decrement, incrementByAmount, goinitial). The actions are generated automatically, and the selectCount selector is created to access the counter's value from the store.
+
+## Using the Redux Store in Components:
+
+To interact with the state, use the useAppSelector hook to retrieve the current value of the counter.
+To modify the state, use the useAppDispatch hook to dispatch actions such as increment, decrement, or incrementByAmount.
 
 # Getting Started
 
